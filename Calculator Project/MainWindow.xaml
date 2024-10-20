@@ -1,0 +1,109 @@
+﻿<Window x:Class="Calculator_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator_Project"
+        mc:Ignorable="d"
+        x:Name="Window"
+        Title="Calculator" 
+        Height="540" 
+        Width="335" 
+        Icon="pack://application:,,,/Resources/Icon.ico"
+        BorderBrush="GhostWhite"
+        BorderThickness="5"
+        >
+
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+
+            <GradientStop Color="#ADD8E6"/>
+            <GradientStop Color="#90EE90" Offset="0.8" />
+
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Window.Effect>
+        <DropShadowEffect Color="LightBlue" BlurRadius="25" Opacity="1"/>
+    </Window.Effect>
+
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+
+
+
+        <TextBox x:Name="displayTextBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"/>
+       
+        
+        <!--Buttons-->
+
+        <Button Grid.Row="3" Grid.Column="0" Foreground="WhiteSmoke" Content="AC" Click="ClearInput"/>
+
+        <Button Grid.Row="3" Grid.Column="1" Foreground="WhiteSmoke" Content="⌦" Click="DeleteInput"/>
+
+        <Button Grid.Row="3" Grid.Column="2" Foreground="WhiteSmoke" Content="%" Click="OperatorEvent"/>
+
+        <Button Name="DivisionButton" Grid.Row="3" Grid.Column="3" FontSize="26" Foreground="WhiteSmoke" Content="/" Click="OperatorEvent"/>
+
+        <Button Grid.Row="4" Grid.Column="0" Foreground="BlanchedAlmond" Click="ClickEvent" Content="7"/>
+
+        <Button Grid.Row="4" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="8"/>
+
+        <Button Grid.Row="4" Grid.Column="2" Foreground="BlanchedAlmond" Click="ClickEvent" Content="9"/>
+
+        <Button Name="MultiplicationButton" Grid.Row="4" Grid.Column="3" Foreground="WhiteSmoke" Content="*" Click="OperatorEvent"/>
+
+        <Button Grid.Row="5" Grid.Column="0" Foreground="BlanchedAlmond" Click="ClickEvent" Content="4"/>
+
+        <Button Grid.Row="5" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="5"/>
+
+        <Button Grid.Row="5" Grid.Column="2" Foreground="BlanchedAlmond" Click="ClickEvent" Content="6"/>
+
+        <Button Name="SubstractionButton" Grid.Row="5" Grid.Column="3" FontSize="32" Foreground="WhiteSmoke" Content="_" Click="OperatorEvent"/>
+
+        <Button Grid.Row="6" Grid.Column="0" Foreground="BlanchedAlmond" Click="ClickEvent" Content="1"/>
+
+        <Button Grid.Row="6" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="2"/>
+
+        <Button Grid.Row="6" Grid.Column="2" Foreground="BlanchedAlmond" Click="ClickEvent" Content="3"/>
+
+        <Button Name="AdditionButton" Grid.Row="6" Grid.Column="3" FontSize="26" Foreground="WhiteSmoke" Content="+" Click="OperatorEvent"/>
+
+        <Button Grid.Row="7" Grid.Column="0" Foreground="WhiteSmoke" Click="SignEvent" Content="+/-"/>
+
+        <Button Grid.Row="7" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="0"/>
+
+        <Button Grid.Row="7" Grid.Column="2" FontSize="30" Foreground="BlanchedAlmond" Click="DecimalEvent" Content="."/>
+
+        <Button Grid.Row="7" Grid.Column="3" Foreground="WhiteSmoke" Content="=" Click="EqualsEvent"/>
+
+
+
+    </Grid>
+
+
+
+
+
+
+</Window>
+
