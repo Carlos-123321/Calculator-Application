@@ -63,9 +63,9 @@ namespace Calculator_Project
             string operatorText = clickedButton.Content.ToString();
 
             if (!displayTextBox.Text.Contains("+") &&
-                !displayTextBox.Text.Contains("_") &&
-                !displayTextBox.Text.Contains("*") &&
-                !displayTextBox.Text.Contains("/"))
+                !displayTextBox.Text.Contains("-") &&
+                !displayTextBox.Text.Contains("×") &&
+                !displayTextBox.Text.Contains("÷"))
             {
 
                 if (double.TryParse(displayTextBox.Text, out lastNumber))
@@ -76,15 +76,15 @@ namespace Calculator_Project
                             selectedOperator = SelectedOperator.Addition;
                             Debug.WriteLine($"{operatorText}");
                             break;
-                        case "_":
+                        case "-":
                             selectedOperator = SelectedOperator.Subtraction;
                             Debug.WriteLine($"{operatorText}");
                             break;
-                        case "*":
+                        case "×":
                             selectedOperator = SelectedOperator.Multiplication;
                             Debug.WriteLine($"{operatorText}");
                             break;
-                        case "/":
+                        case "÷":
                             selectedOperator = SelectedOperator.Division;
                             Debug.WriteLine($"{operatorText}");
                             break;
@@ -93,8 +93,6 @@ namespace Calculator_Project
                     }
 
                     displayTextBox.Text += operatorText;
-
-                   
 
                 }
             }
@@ -108,7 +106,7 @@ namespace Calculator_Project
         {
             string displayText = displayTextBox.Text;
 
-            int operatorIndex = displayText.LastIndexOfAny(new char[] { '+', '_', '*', '/' });
+            int operatorIndex = displayText.LastIndexOfAny(new char[] { '+', '-', '×', '÷' });
 
             if (operatorIndex != -1 && operatorIndex < displayText.Length - 1)
             {

@@ -3,12 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Calculator_Project"
         mc:Ignorable="d"
         x:Name="Window"
         Title="Calculator" 
-        Height="540" 
-        Width="335" 
+        Height="555" 
+        Width="345" 
         Icon="pack://application:,,,/Resources/Icon.ico"
         BorderBrush="GhostWhite"
         BorderThickness="5"
@@ -27,9 +26,10 @@
         <DropShadowEffect Color="LightBlue" BlurRadius="25" Opacity="1"/>
     </Window.Effect>
 
-
     <Grid >
         <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
@@ -51,50 +51,63 @@
 
 
 
-        <TextBox x:Name="displayTextBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="displayTextBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"/>
        
         
         <!--Buttons-->
 
-        <Button Grid.Row="3" Grid.Column="0" Foreground="WhiteSmoke" Content="AC" Click="ClearInput"/>
+        <Button Grid.Row="4" Grid.Column="2" Foreground="WhiteSmoke" Content="AC" Click="ClearInput"/>
 
-        <Button Grid.Row="3" Grid.Column="1" Foreground="WhiteSmoke" Content="⌦" Click="DeleteInput"/>
+        <Button Grid.Row="4" Grid.Column="3" Foreground="WhiteSmoke" Content="⌦" Click="DeleteInput"/>
 
-        <Button Grid.Row="3" Grid.Column="2" Foreground="WhiteSmoke" Content="%" Click="OperatorEvent"/>
+        <Button Grid.Row="4" Grid.Column="0" Foreground="WhiteSmoke" Content="%" Click="OperatorEvent"/>
 
-        <Button Name="DivisionButton" Grid.Row="3" Grid.Column="3" FontSize="26" Foreground="WhiteSmoke" Content="/" Click="OperatorEvent"/>
+        <Button Name="DivisionButton" Grid.Row="5" Grid.Column="3" FontSize="26" Foreground="WhiteSmoke" Content="÷" Click="OperatorEvent"/>
 
-        <Button Grid.Row="4" Grid.Column="0" Foreground="BlanchedAlmond" Click="ClickEvent" Content="7"/>
+        <Button Name="MultiplicationButton" Grid.Row="6" Grid.Column="3" Foreground="WhiteSmoke" Content="×" Click="OperatorEvent"/>
 
-        <Button Grid.Row="4" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="8"/>
+        <Button Name="SubstractionButton" Grid.Row="7" Grid.Column="3" FontSize="32" Foreground="WhiteSmoke" Content="-" Click="OperatorEvent"/>
 
-        <Button Grid.Row="4" Grid.Column="2" Foreground="BlanchedAlmond" Click="ClickEvent" Content="9"/>
+        <Button Name="AdditionButton" Grid.Row="8" Grid.Column="3" FontSize="26" Foreground="WhiteSmoke" Content="+" Click="OperatorEvent"/>
 
-        <Button Name="MultiplicationButton" Grid.Row="4" Grid.Column="3" Foreground="WhiteSmoke" Content="*" Click="OperatorEvent"/>
+        <Button Grid.Row="9" Grid.Column="2" FontSize="30" Foreground="BlanchedAlmond" Click="DecimalEvent" Content="."/>
 
-        <Button Grid.Row="5" Grid.Column="0" Foreground="BlanchedAlmond" Click="ClickEvent" Content="4"/>
+        <Button Grid.Row="9" Grid.Column="3" Foreground="WhiteSmoke" Content="=" Click="EqualsEvent"/>
 
-        <Button Grid.Row="5" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="5"/>
+        <Button Grid.Row="6" Grid.Column="0" Foreground="BlanchedAlmond" Click="ClickEvent" Content="7"/>
 
-        <Button Grid.Row="5" Grid.Column="2" Foreground="BlanchedAlmond" Click="ClickEvent" Content="6"/>
+        <Button Grid.Row="6" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="8"/>
 
-        <Button Name="SubstractionButton" Grid.Row="5" Grid.Column="3" FontSize="32" Foreground="WhiteSmoke" Content="_" Click="OperatorEvent"/>
+        <Button Grid.Row="6" Grid.Column="2" Foreground="BlanchedAlmond" Click="ClickEvent" Content="9"/>
 
-        <Button Grid.Row="6" Grid.Column="0" Foreground="BlanchedAlmond" Click="ClickEvent" Content="1"/>
+        <Button Grid.Row="5" Grid.Column="2" Foreground="BlanchedAlmond" Click="ClickEvent" Content="√x"/>
 
-        <Button Grid.Row="6" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="2"/>
+        <Button Grid.Row="5" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="x²"/>
 
-        <Button Grid.Row="6" Grid.Column="2" Foreground="BlanchedAlmond" Click="ClickEvent" Content="3"/>
+        <Button Grid.Row="5" Grid.Column="0" Foreground="BlanchedAlmond" Click="ClickEvent" Content="?"/>
 
-        <Button Name="AdditionButton" Grid.Row="6" Grid.Column="3" FontSize="26" Foreground="WhiteSmoke" Content="+" Click="OperatorEvent"/>
+        <Button Grid.Row="7" Grid.Column="0" Foreground="BlanchedAlmond" Click="ClickEvent" Content="4"/>
 
-        <Button Grid.Row="7" Grid.Column="0" Foreground="WhiteSmoke" Click="SignEvent" Content="+/-"/>
+        <Button Grid.Row="7" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="5"/>
 
-        <Button Grid.Row="7" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="0"/>
+        <Button Grid.Row="7" Grid.Column="2" Foreground="BlanchedAlmond" Click="ClickEvent" Content="6"/>
 
-        <Button Grid.Row="7" Grid.Column="2" FontSize="30" Foreground="BlanchedAlmond" Click="DecimalEvent" Content="."/>
 
-        <Button Grid.Row="7" Grid.Column="3" Foreground="WhiteSmoke" Content="=" Click="EqualsEvent"/>
+        <Button Grid.Row="8" Grid.Column="0" Foreground="BlanchedAlmond" Click="ClickEvent" Content="1"/>
+
+        <Button Grid.Row="8" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="2"/>
+
+        <Button Grid.Row="8" Grid.Column="2" Foreground="BlanchedAlmond" Click="ClickEvent" Content="3"/>
+
+        
+
+        <Button Grid.Row="9" Grid.Column="0" Foreground="WhiteSmoke" Click="SignEvent" Content="+/-"/>
+
+        <Button Grid.Row="9" Grid.Column="1" Foreground="BlanchedAlmond" Click="ClickEvent" Content="0"/>
+
+        
+
+        
 
 
 

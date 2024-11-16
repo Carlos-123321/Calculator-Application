@@ -49,6 +49,7 @@
             <Setter Property="FontFamily" Value="Segoe UI"/>
             <Setter Property="FontSize" Value="37"/>
             <Setter Property="BorderBrush" Value="WhiteSmoke"/>
+            <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="IsReadOnly" Value="True"/>
             <Setter Property="Foreground" Value="BlanchedAlmond"/>
             <Setter Property="FontWeight" Value="Bold"/>
